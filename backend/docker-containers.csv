@@ -1,0 +1,5 @@
+CONTAINER_ID,NAMES,IMAGE,STATUS,PORTS
+f2af15705ee2,peer0.org1.example.com,hyperledger/fabric-peer,Up 12 hours,0.0.0.0:7051->7051/tcp 0.0.0.0:7053->7053/tcp
+7db82a6eaef4,couchdb,couchdb:2.3,Up 12 hours,4369/tcp 9100/tcp 0.0.0.0:5984->5984/tcp
+79ecdfe870f2,orderer.example.com,hyperledger/fabric-orderer,Exited (1) 12 hours ago,
+8a70e8ed7e88,ca.example.com,hyperledger/fabric-ca,Up 12 hours,0.0.0.0:7054->7054/tcp

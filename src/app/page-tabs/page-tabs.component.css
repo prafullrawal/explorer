@@ -1,0 +1,14 @@
+b {
+  margin-left: 10px;
+  color: black;
+  text-transform: uppercase;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  background-color: cadetblue;
+}
+li{
+  line-height: 3.5rem;
+}
+fa-icon{
+  font-size: larger;
+}

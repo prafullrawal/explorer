@@ -1,0 +1,97 @@
+<div class="content_section">
+  <div class="left_sec_3">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="wht_blk wht_blk_1"><span>NODES</span><span class="green">{{explorerMainPageData.nodes}}</span><img
+            src="../../assets/images/icon_1.png"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="wht_blk wht_blk_2"><span>BLOCKS</span><span class="green">{{explorerMainPageData.totalBlocks}}</span><img
+            src="../../assets/images/icon_2.png"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="wht_blk wht_blk_3"><span>TRANSACTIONS</span><span class="green">{{explorerMainPageData.totalTxns}}</span><img
+            src="../../assets/images/icon_3.png"></div>
+      </div>
+      <div class="col-md-3">
+        <div class="wht_blk wht_blk_4"><span>CHAINCODES</span><span class="green">{{explorerMainPageData.chaincode}}</span><img
+            src="../../assets/images/icon_4.png"></div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <h3><b>BLOCK # <span class="grn"> {{explorerMainPageData.currentBlockNo}}</span></b></h3>
+    <div class="row wht_blk blockno" style="border-top: 7px solid cornflowerblue;">
+      <div class="col-md-1">
+        <img src="../../assets/images/prev.png" style="margin-top: 40px;" alt="Backward" />
+      </div>
+      <div class="col-md-10">
+        <table width="100%" border="0">
+          <tbody>
+            <tr>
+              <td colspan="2" class="subtitle">{{explorerMainPageData.txnMsg}}</td>
+            </tr>
+            <tr>
+              <td><b>Txn By</b></td>
+              <td class="blue">{{explorerMainPageData.txnCreator}}</td>
+            </tr>
+            <tr>
+              <td><b>Txn Id</b></td>
+              <td class="blue">{{explorerMainPageData.txnId}}</td>
+            </tr>
+            <tr>
+              <td><b>Current Hash</b></td>
+              <td class="blue">{{explorerMainPageData.currentBlockHash}}</td>
+            </tr>
+            <tr>
+              <td><b>Previous Hash</b></td>
+              <td class="blue">{{explorerMainPageData.previousBlockHash}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-1">
+        <img src="../../assets/images/next.png" style="margin-top: 40px;" alt="Forward" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- The Modal -->
+  <div class="modal" id="myModal" [style.display]="showModal ? 'block' : 'none'">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Explorer Request Details</h4>
+          <button type="button" class="close" (click)="hideModal()">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="row">
+            <div class="col">
+              <label for="orgname">Org Name :</label>
+              <input type="text" class="form-control" id="orgname" [(ngModel)]="explorerLoginData.orgname">
+            </div>
+            <div class="col">
+              <label for="peername">Peer Name :</label>
+              <input type="text" class="form-control" id="peername" [(ngModel)]="explorerLoginData.peername">
+            </div>
+            <div class="col">
+              <label for="username">User Name :</label>
+              <input type="text" class="form-control" id="username" [(ngModel)]="explorerLoginData.username">
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info mx-auto d-block" (click)="fetchData()">Fetch Data</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

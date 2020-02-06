@@ -1,0 +1,47 @@
+<div class="card m-3">
+    <h5 class="card-header"> Docker Containers <button type="button" class="btn btn-outline-primary" (click)="RefreshAndShowContainersStatus()"  style="float: right">Refresh </button> </h5>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">CONTAINER ID</th>
+            <th scope="col">NAMES</th>
+            <th scope="col">IMAGE</th>
+            <th scope="col">STATUS</th>
+            <th scope="col">PORTS</th>
+          </tr>
+          </thead>
+          <tbody>
+	    <tr *ngFor="let Containers of containers; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td><a href="#" (click)="getContainerLogs(Containers.CONTAINER_ID)">{{ Containers.CONTAINER_ID }}</a></td>
+            <td>{{ Containers.NAMES }}</td>
+            <td>{{ Containers.IMAGE }}</td>
+            <td>{{ Containers.STATUS  }}</td>
+            <td>{{ Containers.PORTS  }}</td>
+          </tr>
+          </tbody>
+        </table>
+        <br>
+</div>
+
+
+<button type="button" id="openModal" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable" hidden></button>
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="dockerContainerLogs">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

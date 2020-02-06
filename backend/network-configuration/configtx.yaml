@@ -1,0 +1,76 @@
+Organizations:
+  - Name: OrdererOrg
+    ID: OrdererMSP
+    MSPDir: crypto-config/ordererOrganizations/example.com/msp
+  - Name: Org1MSP
+    ID: Org1MSP
+    MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+    AnchorPeers:
+      - Host: peer0.org1.example.com
+        Port: 7051
+Capabilities:
+  Channel:
+    V2_0: true
+  Orderer:
+    V2_0: true
+  Application:
+    V2_0: true
+Application:
+  Organizations: null
+  Capabilities:
+    V2_0: true
+Orderer:
+  OrdererType: solo
+  Addresses:
+    - 'orderer.example.com:7050'
+  BatchTimeout: 2s
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 99 MB
+    PreferredMaxBytes: 512 KB
+  Organizations: null
+Channel:
+  Capabilities:
+    V2_0: true
+Profiles:
+  OneOrgOrdererGenesis:
+    Capabilities:
+      V2_0: true
+    Orderer:
+      OrdererType: solo
+      Addresses:
+        - 'orderer.example.com:7050'
+      BatchTimeout: 2s
+      BatchSize:
+        MaxMessageCount: 10
+        AbsoluteMaxBytes: 99 MB
+        PreferredMaxBytes: 512 KB
+      Organizations:
+        - Name: OrdererOrg
+          ID: OrdererMSP
+          MSPDir: crypto-config/ordererOrganizations/example.com/msp
+      Capabilities:
+        V2_0: true
+    Consortiums:
+      SampleConsortium:
+        Organizations:
+          - Name: Org1MSP
+            ID: Org1MSP
+            MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+            AnchorPeers:
+              - Host: peer0.org1.example.com
+                Port: 7051
+  OneOrgChannel:
+    Consortium: SampleConsortium
+    Capabilities:
+      V2_0: true
+    Application:
+      Organizations:
+        - Name: Org1MSP
+          ID: Org1MSP
+          MSPDir: crypto-config/peerOrganizations/org1.example.com/msp
+          AnchorPeers:
+            - Host: peer0.org1.example.com
+              Port: 7051
+      Capabilities:
+        V2_0: true

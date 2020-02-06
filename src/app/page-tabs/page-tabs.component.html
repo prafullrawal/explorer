@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-3">
+      <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" routerLink="/prerequisite" role="tab"
+            aria-controls="prerequisite" aria-selected="true"><fa-icon [icon]="faCloudDownloadAlt"></fa-icon><b>Pre-requisites</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" routerLink="/network" role="tab" aria-controls="network"
+            aria-selected="false"><fa-icon [icon]="faNetworkWired"></fa-icon><b>Network</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" routerLink="/chaincode" role="tab" aria-controls="chaincode"
+            aria-selected="false"><fa-icon [icon]="faFileCode"></fa-icon><b>Chaincode</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" routerLink="/identities" role="tab"
+            aria-controls="identities" aria-selected="false"><fa-icon [icon]="faFingerprint"></fa-icon><b>Identities</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" routerLink="/explorer" role="tab" aria-controls="explorer"
+            aria-selected="false"><fa-icon [icon]="faCubes"></fa-icon><b>Explorer</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" routerLink="/swagger" role="tab" aria-controls="swagger"
+            aria-selected="false"><fa-icon [icon]="faGlobe"></fa-icon><b>Swagger APIs</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" routerLink="/docker" role="tab" aria-controls="docker"
+            aria-selected="false"><fa-icon [icon]="faServer"></fa-icon><b>Docker Data</b></a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.col-md-4 -->
+    <div class="col-xl-9">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="prerequisite" role="tabpanel" aria-labelledby="prerequisite-tab">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+    <!-- /.col-md-8 -->
+  </div>
+
+
+
+</div>
+<!-- /.container -->

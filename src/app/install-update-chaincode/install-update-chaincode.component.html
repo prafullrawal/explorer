@@ -1,0 +1,42 @@
+<div class="container">
+  <br>
+  <div class="card">
+    <div class="card-header"><b>Upload Chaincode Files</b></div>
+    <div class="card-body">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile" name="filename">
+        <label class="custom-file-label" for="customFile"><b>Choose file</b></label>
+        <br><br>
+        <button type="button" class="btn btn-success mx-auto d-block">Upload</button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="card">
+    <div class="card-header"><b>Install, Instantiate, Query & Upgrade Chaincode</b></div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <button type="button" class="btn btn-success mx-auto d-block" (click)="installChaincode()">Install</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-success mx-auto d-block">Instantiate</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-success mx-auto d-block">Query/Invoke</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-success mx-auto d-block" (click)="upgradeChaincode()">Upgrade</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="card">
+    <div class="card-header"><b>Generate File For Swagger</b></div>
+    <div class="card-body">
+      <button type="button" class="btn btn-success mx-auto d-block">Generate JSON</button>
+    </div>
+  </div>
+  <br>
+</div>

@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-header"><b>Host Details</b></div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <label for="host"><b>Host :</b></label>
+              <input type="text" class="form-control" id="host" [(ngModel)]="createNetwork.host">
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-header"><b>Orderer Details</b></div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <label for="odrname"><b>Name :</b></label>
+              <input type="text" class="form-control" id="odrname" [(ngModel)]="createNetwork.odrname">
+            </div>
+            <div class="col">
+              <label for="odrport"><b>Port :</b></label>
+              <input type="text" class="form-control" id="odrport" [(ngModel)]="createNetwork.odrport">
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="card">
+    <div class="card-header"><b>Organization Details</b><button style="float: right;">
+        <fa-icon [icon]="faPlus"></fa-icon>
+      </button></div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <label for="orgname"><b>Org Name :</b></label>
+          <input type="text" class="form-control" id="orgname" [(ngModel)]="createNetwork.orgname">
+        </div>
+        <div class="col">
+          <label for="msp"><b>Org MSP :</b></label>
+          <input type="text" class="form-control" id="orgmsp" [(ngModel)]="createNetwork.orgmsp">
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-header"><b>Certificate Authority Details</b></div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <label for="caname"><b>CA Name :</b></label>
+              <input type="text" class="form-control" id="caname" [(ngModel)]="createNetwork.caname">
+            </div>
+            <div class="col">
+              <label for="caport"><b>CA Port :</b></label>
+              <input type="text" class="form-control" id="caport" [(ngModel)]="createNetwork.caport">
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-header"><b>Peer Details</b><button style="float: right;">
+            <fa-icon [icon]="faPlus"></fa-icon>
+          </button></div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <label for="peername"><b>Peer Name :</b></label>
+              <input type="text" class="form-control" id="peername" [(ngModel)]="createNetwork.peername">
+            </div>
+            <div class="col">
+              <label for="peerport"><b>Peer Port :</b></label>
+              <input type="text" class="form-control" id="peerport" [(ngModel)]="createNetwork.peerport">
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+  <br>
+  <button type="button" class="btn btn-success mx-auto d-block" (click)="onSubmitGenerateCertificate()">Create</button>
+  <br>
+</div>
+
+
+
+  <div class="modal"  style="background-color:rgba(0,0,0, 0.6);" id="myModal" [style.display]="showModal ? 'block' : 'none'">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Please wait operation in progress.. <i class="fa fa-refresh fa-spin" style="font-size:20px;color:#007bff;" [style.display]="spinnerModal ? 'block' : 'none'"></i></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="hideModal()">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
